@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <link rel="stylesheet" href="index.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <section class="background-header">
+        <img src="./images/line.png" class="line-vector" alt="line" />
+      </section>
+      <!-- Rating state start -->
+      <div class="container">
+        <div class="select-rating">
+          <img
+            src="./images/icon-star.svg"
+            alt="icon star"
+            class="rating-icon"
+          />
+          <h1>FAQs</h1>
+        </div>
+
+        <section class="questionary">
+          <div class="question-section">
+            <h4>What is Frontend Mentor, and how will it help me?</h4>
+            <a href="#hide1" class="hide" id="hide1" onclick="action()"
+              ><img src="./images/icon-plus.svg" alt="icon plus"
+            /></a>
+
+            <a href="#show1" class="show" id="show1" onclick="action()"
+              ><img src="./images/icon-minus.svg" alt="icon minus"
+            /></a>
+          </div>
+            <h6 id="content1">
+              Frontend Mentor offers realistic coding challenges to help
+              developers improve their frontend coding skills with projects in
+              HTML, CSS, and JavaScript. It’s suitable for all levels and ideal
+              for portfolio building.
+            </h6>
+        </section>
+
+        <div class="divider" ></div>
+
+        <section class="questionary">
+          <div class="question-section">
+            <h4>What is Frontend Mentor, and how will it help me?</h4>
+            <a href="#hide2" class="hide" id="hide2" onclick="action()"
+              ><img src="./images/icon-plus.svg" alt="icon plus"
+            /></a>
+
+            <a href="#show2" class="show" id="show2" onclick="action()"
+              ><img src="./images/icon-minus.svg" alt="icon minus"
+            /></a>
+          </div>
+            <h6 id="content2">
+              Frontend Mentor offers realistic coding challenges to help
+              developers improve their frontend coding skills with projects in
+              HTML, CSS, and JavaScript. It’s suitable for all levels and ideal
+              for portfolio building.
+            </h6>
+        </section>
+
+        <div class="divider" ></div>
+
+        <section class="questionary">
+          <div class="question-section">
+            <h4>What is Frontend Mentor, and how will it help me?</h4>
+            <a href="#hide3" class="hide" id="hide3" onclick="action()" tabindex="0" role="button" aria-pressed="false"
+              ><img src="./images/icon-plus.svg" alt="icon plus"
+            /></a>
+
+            <a href="#show3" class="show" id="show3" onclick="action()" tabindex="0" role="button" aria-pressed="false"
+              ><img src="./images/icon-minus.svg" alt="icon minus"
+            /></a>
+          </div>
+            <h6 id="content3">
+              Frontend Mentor offers realistic coding challenges to help
+              developers improve their frontend coding skills with projects in
+              HTML, CSS, and JavaScript. It’s suitable for all levels and ideal
+              for portfolio building.
+            </h6>
+        </section>
+      </div>
+    </main>
+    <script>
+      rating_selected = 0;
+
+      function action() {
+        const idSelected = event.target.parentNode.getAttribute("id");
+        const count = idSelected.includes('hide') ? idSelected.replace('hide', '') : idSelected.replace('show', '');
+        if (idSelected.includes("hide")) {
+          document.getElementById(idSelected).style.display = 'none'
+          document.getElementById(`show${count}`).style.display = 'block'
+          document.getElementById(`content${count}`).style.display = 'block'
+
+        } else if (idSelected.includes("show"))  {
+          document.getElementById(idSelected).style.display = 'none'
+          document.getElementById(`hide${count}`).style.display = 'block'
+          document.getElementById(`content${count}`).style.display = 'none'
+
+        }
+      }
+
+
+    </script>
+  </body>
+</html>
